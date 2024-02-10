@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Feed from "./components/Feed";
+import Video from "./components/Video";
+import Channel from "./components/Channel";
+import SearchFeed from "./components/SearchFeed";
+import { ThemeProvider } from "./components/providers/theme-provider";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <header>
+        <Navbar />
+      </header>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Routes>
+          <Route path="/" element={<Feed />} />
+          <Route path="/video/:videoId" element={<Video />} />
+          <Route path="/channel/:channelId" element={<Channel />} />
+          <Route path="/search/:searchTerm" element={<SearchFeed />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
