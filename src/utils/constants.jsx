@@ -25,7 +25,7 @@ export const categories = [
   { name: "Podcasts", icon: AudioLines },
   { name: "Comedy", icon: Drama },
   { name: "Fitness", icon: Dumbbell },
-  { name: "Cryptocurrency", icon: Bitcoin },
+  { name: "Crypto", icon: Bitcoin },
 ];
 
 export const demoThumbnail =

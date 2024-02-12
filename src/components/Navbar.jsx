@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import Logo from "../../public/logo.svg";
-import LogoDark from "../../public/logo-dark.svg";
+import Logo from "/logo.svg";
+import LogoDark from "/logo-dark.svg";
 
 import SearchBar from "./SearchBar";
 import { ModeToggle } from "./ModeToggle";
