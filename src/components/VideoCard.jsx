@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 import {
-  demoThumbnail,
   demoVideo,
   demoChannelTitle,
   demoVideoTitle,
@@ -9,6 +8,7 @@ import {
 } from "@/utils/constants";
 
 import { Card, CardContent, CardTitle, CardHeader } from "@/components/ui/Card";
+import { decodeHtmlEntities } from "@/utils/decodeHtmlEntities";
 
 const VideoCard = ({
   video: {
@@ -26,25 +26,23 @@ const VideoCard = ({
             className="-my-[9.45%] object-contain"
           />
         </CardHeader>
-        <CardContent className="h-[6.625rem] px-1.5 py-2 text-left md:p-1">
-          <Link to={videoId ? `/video/${videoId}` : demoVideo}>
-            <CardTitle className="truncate-2-lines text-base font-medium">
-              {snippet?.title || demoVideoTitle}
-            </CardTitle>
-          </Link>
-          <Link
-            to={
-              snippet?.channelId
-                ? `/channel/${snippet?.channelId}`
-                : demoChannel
-            }
-          >
-            <p className="truncate text-muted-foreground">
-              {snippet?.channelTitle || demoChannelTitle}
-            </p>
-          </Link>
-        </CardContent>
       </Link>
+      <CardContent className="h-[6.625rem] px-1.5 py-2 text-left md:p-1">
+        <Link to={videoId ? `/video/${videoId}` : demoVideo}>
+          <CardTitle className="truncate-2-lines text-base font-medium">
+            {decodeHtmlEntities(snippet?.title) || demoVideoTitle}
+          </CardTitle>
+        </Link>
+        <Link
+          to={
+            snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannel
+          }
+        >
+          <p className="truncate text-muted-foreground">
+            {snippet?.channelTitle || demoChannelTitle}
+          </p>
+        </Link>
+      </CardContent>
     </Card>
   );
 };
