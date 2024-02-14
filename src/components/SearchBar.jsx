@@ -5,14 +5,27 @@ import { Button } from "./ui/Button";
 import { Search } from "lucide-react";
 
 const SearchBar = () => {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (search) {
+      navigate(`/search/${search}`);
+      setSearch("");
+    }
+  };
+
   return (
     <form
-      onSubmit={() => {}}
+      onSubmit={handleSubmit}
       className="relative mt-1 flex items-center space-x-2"
     >
       <Input
-        onChange={() => {}}
-        className="w-40 rounded-full sm:w-96"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="w-48 rounded-full pr-16 sm:w-[26rem]"
         placeholder="Search...."
       />
       <Button
