@@ -19,10 +19,14 @@ module.exports = {
     extend: {
       screens: {
         sm: "674px",
+        xl: "1200px",
       },
       backgroundImage: {
         "gradient-1":
           "linear-gradient(90deg, rgba(172,84,219,1) 15%, rgba(180,89,202,1) 25%, rgba(240,96,96,1) 54%, rgba(226,197,48,1) 100%)",
+      },
+      gridTemplateColumns: {
+        custom: "1fr 0.65fr",
       },
       colors: {
         border: "hsl(var(--border))",
