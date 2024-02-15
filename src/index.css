@@ -11,6 +11,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+iframe {
+  @apply rounded-2xl;
+}
+
 .truncate-2-lines {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -18,6 +22,10 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+}
+
+.react-player {
+  width: auto !important;
 }
 
 .sidebar {
