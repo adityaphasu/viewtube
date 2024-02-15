@@ -30,7 +30,10 @@ const Channel = () => {
         shadow="shadow-none"
       />
       <div className="flex p-2 sm:p-14">
-        <Videos videos={videos} />
+        <Videos
+          videos={videos}
+          classes="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        />
       </div>
     </div>
   );

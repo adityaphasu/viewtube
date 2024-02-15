@@ -18,7 +18,10 @@ const SearchFeed = () => {
       <h4 className="mb-2 hidden text-2xl font-bold sm:block">
         Search Results for: <span>{searchTerm}</span> videos
       </h4>
-      <Videos videos={videos} />
+      <Videos
+        videos={videos}
+        classes="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      />
     </div>
   );
 };

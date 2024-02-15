@@ -9,15 +9,17 @@ import {
 
 import { Card, CardContent, CardTitle, CardHeader } from "@/components/ui/Card";
 import { decodeHtmlEntities } from "@/utils/decodeHtmlEntities";
+import { cn } from "@/lib/utils";
 
 const VideoCard = ({
   video: {
     id: { videoId },
     snippet,
   },
+  ...props
 }) => {
   return (
-    <Card className="border-none shadow-none">
+    <Card className={cn("border-none shadow-none", props.className)}>
       <Link to={videoId ? `/video/${videoId}` : demoVideo}>
         <CardHeader className="h-auto w-auto overflow-hidden p-0 md:rounded-lg">
           <img
