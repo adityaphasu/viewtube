@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
 import SideBar from "./SideBar";
 import Videos from "./Videos";
+import Spinner from "./Spinner";
 import { fetchFromAPI } from "@/utils/fetchFromAPI";
 import { Copyright } from "lucide-react";
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) => {
       setVideos(data.items);
+      setLoading(false);
     });
   }, [selectedCategory]);
 
@@ -29,7 +33,14 @@ const Feed = () => {
         <h4 className="mb-2 hidden text-2xl font-bold sm:block">
           {selectedCategory} <span>videos</span>
         </h4>
-        <Videos videos={videos} />
+        {loading ? (
+          <Spinner height="h-3/4" />
+        ) : (
+          <Videos
+            videos={videos}
+            classes="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          />
+        )}
       </div>
     </div>
   );
