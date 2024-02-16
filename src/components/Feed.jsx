@@ -20,16 +20,16 @@ const Feed = () => {
 
   return (
     <div className="flex flex-col gap-4 md:flex-row md:gap-6">
-      <div className="flex h-auto flex-col border-r border-r-gray-300 px-0 md:h-[89vh]">
+      <div className="flex h-auto flex-col border-r border-r-gray-300 px-0 lg:h-[88vh]">
         <SideBar
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-        <p className="mt-1.5 hidden items-center justify-center gap-1 text-sm text-muted-foreground md:flex ">
+        <p className="mt-1.5 hidden items-center justify-center gap-1 text-sm text-muted-foreground lg:flex ">
           <Copyright className="h-4 w-4" /> Copyright 2024
         </p>
       </div>
-      <div className="h-[89vh] flex-1 overflow-y-auto  text-center sm:p-2 md:text-left">
+      <div className="flex-1 overflow-y-auto text-center sm:p-2 md:text-left lg:h-[88vh]">
         <h4 className="mb-2 hidden text-2xl font-bold sm:block">
           {selectedCategory} <span>videos</span>
         </h4>
