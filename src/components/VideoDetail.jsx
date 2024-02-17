@@ -28,7 +28,7 @@ const VideoDetail = () => {
 
   return (
     <div className="h-[89vh] pt-5 lg:px-14">
-      <div className="lg:grid-cols-custom grid grid-cols-1 gap-1.5">
+      <div className="grid grid-cols-1 gap-1.5 lg:grid-cols-custom">
         <div className="w-full rounded-2xl">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${videoId}`}
