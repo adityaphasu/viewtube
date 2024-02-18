@@ -29,6 +29,7 @@ const SearchBar = () => {
         placeholder="Search...."
       />
       <Button
+        aria-label="search"
         type="submit"
         variant="outline"
         className="absolute right-0 rounded-full bg-primary-foreground dark:bg-[#1F1F1F]"
