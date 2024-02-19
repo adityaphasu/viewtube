@@ -1,5 +1,7 @@
 # ViewTube
 
+![ViewTube](/public/ViewTube.png)
+
 ViewTube is a web application made using React. It allows users to search for and view YouTube videos directly from the application. It uses the YouTube Data API to fetch the videos and display them in a user-friendly manner. The application also allows users to view the details of the video, such as the title, channel name and view count. Users can also view all the videos of a specific channel by clicking on the channel name.
 
 ## Features
